@@ -3,10 +3,13 @@
 <head>
   <meta charset='utf-8'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Phanary - Lightning-fast fantasy RPG audio solution for tabletop games">
+  <meta name="theme-color" content="#2e5266">
 
   <title>{{ title }}</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700|Slabo+27px" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/dark-mode.css">
 
   {{!-- PWA Stuff --}}
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
@@ -18,8 +21,59 @@
   <meta name="apple-mobile-web-app-title" content="Phanary">
   <meta name="application-name" content="Phanary">
   <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
-  <meta name="theme-color" content="#2e5266">
 </head>
 <body>
+  <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">
+    <svg class="icon-sun" viewBox="0 0 24 24" style="display: none;">
+      <path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-14v2m0 16v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M2 12h2m16 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+    </svg>
+  </button>
+
   {{{ body }}}
+
+  <script src="/scripts/export-import.js"></script>
+  <script>
+    // Dark mode toggle
+    (function() {
+      const toggle = document.getElementById('dark-mode-toggle');
+      const body = document.body;
+      const iconSun = toggle.querySelector('.icon-sun');
+      const iconMoon = toggle.querySelector('.icon-moon');
+
+      // Check for saved preference or system preference
+      const savedTheme = localStorage.getItem('phanary-theme');
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+        body.classList.add('dark-mode');
+        iconSun.style.display = 'block';
+        iconMoon.style.display = 'none';
+      }
+
+      toggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        const isDark = body.classList.contains('dark-mode');
+        localStorage.setItem('phanary-theme', isDark ? 'dark' : 'light');
+        iconSun.style.display = isDark ? 'block' : 'none';
+        iconMoon.style.display = isDark ? 'none' : 'block';
+      });
+    })();
+
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('SW registered:', registration.scope);
+          })
+          .catch(error => {
+            console.log('SW registration failed:', error);
+          });
+      });
+    }
+  </script>
 </body>
+</html>

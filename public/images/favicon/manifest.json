@@ -1,19 +1,30 @@
+
 {
-    "name": "Phanary",
-    "icons": [
-        {
-            "src": "/images/favicon/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/images/favicon/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#2e5266",
-    "background_color": "#2e5266",
-    "display": "standalone",
-    "orientation": "portrait"
+  "name": "Phanary",
+  "short_name": "Phanary",
+  "description": "Lightning-fast fantasy RPG audio solution for tabletop games",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#2e5266",
+  "theme_color": "#2e5266",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/images/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["entertainment", "music", "games"],
+  "lang": "en"
 }

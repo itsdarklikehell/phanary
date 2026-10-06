@@ -1,0 +1,309 @@
+
+/* Dark Mode Support */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-tertiary: #e0e0e0;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --border-color: #dddddd;
+  --accent-color: #2e5266;
+  --accent-hover: #3a6b82;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --navbar-bg: #2e5266;
+  --navbar-text: #ffffff;
+  --sidebar-bg: #f5f5f5;
+  --btn-bg: #2e5266;
+  --btn-text: #ffffff;
+  --btn-hover: #3a6b82;
+  --tag-bg: #e0e0e0;
+  --tag-text: #333333;
+  --search-bg: #ffffff;
+  --search-border: #dddddd;
+  --search-text: #333333;
+  --search-placeholder: #999999;
+  --progress-bg: #e0e0e0;
+  --progress-fill: #2e5266;
+  --volume-bg: #e0e0e0;
+  --volume-fill: #2e5266;
+  --tooltip-bg: #333333;
+  --tooltip-text: #ffffff;
+  --modal-bg: #ffffff;
+  --modal-overlay: rgba(0, 0, 0, 0.5);
+  --error-bg: #ffebee;
+  --error-text: #c62828;
+  --success-bg: #e8f5e9;
+  --success-text: #2e7d32;
+  --warning-bg: #fff3e0;
+  --warning-text: #ef6c00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --bg-tertiary: #404040;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --border-color: #404040;
+    --accent-color: #4a90b8;
+    --accent-hover: #5ba3cc;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --card-bg: #2d2d2d;
+    --input-bg: #404040;
+    --navbar-bg: #1a1a1a;
+    --navbar-text: #e0e0e0;
+    --sidebar-bg: #2d2d2d;
+    --btn-bg: #4a90b8;
+    --btn-text: #ffffff;
+    --btn-hover: #5ba3cc;
+    --tag-bg: #404040;
+    --tag-text: #e0e0e0;
+    --search-bg: #404040;
+    --search-border: #555555;
+    --search-text: #e0e0e0;
+    --search-placeholder: #888888;
+    --progress-bg: #404040;
+    --progress-fill: #4a90b8;
+    --volume-bg: #404040;
+    --volume-fill: #4a90b8;
+    --tooltip-bg: #e0e0e0;
+    --tooltip-text: #1a1a1a;
+    --modal-bg: #2d2d2d;
+    --modal-overlay: rgba(0, 0, 0, 0.7);
+    --error-bg: #3e2723;
+    --error-text: #ef9a9a;
+    --success-bg: #1b5e20;
+    --success-text: #a5d6a7;
+    --warning-bg: #e65100;
+    --warning-text: #ffcc80;
+  }
+}
+
+/* Dark mode toggle class */
+.dark-mode {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #404040;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --border-color: #404040;
+  --accent-color: #4a90b8;
+  --accent-hover: #5ba3cc;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --card-bg: #2d2d2d;
+  --input-bg: #404040;
+  --navbar-bg: #1a1a1a;
+  --navbar-text: #e0e0e0;
+  --sidebar-bg: #2d2d2d;
+  --btn-bg: #4a90b8;
+  --btn-text: #ffffff;
+  --btn-hover: #5ba3cc;
+  --tag-bg: #404040;
+  --tag-text: #e0e0e0;
+  --search-bg: #404040;
+  --search-border: #555555;
+  --search-text: #e0e0e0;
+  --search-placeholder: #888888;
+  --progress-bg: #404040;
+  --progress-fill: #4a90b8;
+  --volume-bg: #404040;
+  --volume-fill: #4a90b8;
+  --tooltip-bg: #e0e0e0;
+  --tooltip-text: #1a1a1a;
+  --modal-bg: #2d2d2d;
+  --modal-overlay: rgba(0, 0, 0, 0.7);
+  --error-bg: #3e2723;
+  --error-text: #ef9a9a;
+  --success-bg: #1b5e20;
+  --success-text: #a5d6a7;
+  --warning-bg: #e65100;
+  --warning-text: #ffcc80;
+}
+
+/* Apply dark mode styles */
+body.dark-mode {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.dark-mode .navbar {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+}
+
+.dark-mode .sidebar {
+  background-color: var(--sidebar-bg);
+}
+
+.dark-mode .card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.dark-mode .btn {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+.dark-mode .btn:hover {
+  background-color: var(--btn-hover);
+}
+
+.dark-mode .tag {
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+}
+
+.dark-mode .search-container {
+  background-color: var(--search-bg);
+  border-color: var(--search-border);
+}
+
+.dark-mode .search-container input {
+  color: var(--search-text);
+}
+
+.dark-mode .search-container input::placeholder {
+  color: var(--search-placeholder);
+}
+
+.dark-mode .progress-bar {
+  background-color: var(--progress-bg);
+}
+
+.dark-mode .progress-bar__fill {
+  background-color: var(--progress-fill);
+}
+
+.dark-mode .volume-slider {
+  background-color: var(--volume-bg);
+}
+
+.dark-mode .volume-slider__fill {
+  background-color: var(--volume-fill);
+}
+
+.dark-mode .tooltip {
+  background-color: var(--tooltip-bg);
+  color: var(--tooltip-text);
+}
+
+.dark-mode .modal {
+  background-color: var(--modal-bg);
+}
+
+.dark-mode .modal-overlay {
+  background-color: var(--modal-overlay);
+}
+
+.dark-mode .error {
+  background-color: var(--error-bg);
+  color: var(--error-text);
+}
+
+.dark-mode .success {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+}
+
+.dark-mode .warning {
+  background-color: var(--warning-bg);
+  color: var(--warning-text);
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  background: var(--btn-hover);
+  transform: scale(1.1);
+}
+
+.dark-mode-toggle svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -280px;
+    top: 0;
+    bottom: 0;
+    width: 280px;
+    z-index: 100;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .search-container {
+    flex-direction: column;
+  }
+
+  .btn-group {
+    flex-wrap: wrap;
+  }
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .sidebar,
+  .btn,
+  .dark-mode-toggle {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+}
